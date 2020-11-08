@@ -58,36 +58,54 @@
     <!--==========================
   Header
   ============================-->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-      <a
-        class="navbar-brand" href="/">
-          <img style="margin-top: -5px;" width="50" height="50"
-            src="{{ url_for('static', filename='img/logo-removebg.png') }}" class="img-fluid" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-link" href="/plot">Plot</a>
-          <a class="nav-link" href="/livemap">Livemap</a>
-          <a class="nav-link" href="/satellite">Satellite</a>
-          <a class="nav-link" href="/predict">Predict</a>
+    <header id="header">
+      <div id="topbar">
+        <div class="container">
+          <div class="social-links">
+            <!-- <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            <a href="#" class="instagram"><i class="fa fa-instagram"></i></a> -->
+          </div>
         </div>
       </div>
-    </nav>
-  
+
+      <div class="container">
+        <div class="logo float-left">
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <h1 class="text-light">
+            <a href="#intro" class="scrollto"><span>FloodML</span></a>
+          </h1> -->
+          <a href="#header" class="scrollto"
+            ><img
+              style="margin-top: -5px; min-height: 50px;"
+              src="{{ url_for('static', filename='img/logo-removebg.png') }}"
+              alt=""
+              class="img-fluid"
+          /></a>
+        </div>
+
+        <nav class="main-nav float-right d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="index.html">Home</a></li>
+            <li><a href="plots.html">Plots</a></li>
+            <li><a href="livemap.html">Livemaps</a></li>
+            <li><a href="satellite.html">Satellite</a></li>
+            <li><a href="predicts.html">Predict</a></li>
+          </ul>
+        </nav>
+        <!-- .main-nav -->
+      </div>
+    </header>
     <!-- #header -->
 
     <!--==========================
     Intro Section
   ============================-->
     <section id="intro" class="clearfix">
-      <div class="container-fluid d-flex h-100">
+      <div class="container d-flex h-100">
         <div class="row justify-content-center align-self-center">
-          <div class="col-md-6 intro-info order-md-first order-last" style="background-color: transparent;padding-right:50px;">
+          <div class="col-md-5 intro-info order-md-first order-last" style="background-color: transparent;padding-right:50px;">
             <!-- <h2 style="color:#00BFFF;">FloodML</h2> -->
             <a href="#header" class="scrollto"
             ><img
@@ -104,10 +122,14 @@
             </div>
           </div>
 
-          <div class="col-md-6 intro-img order-md-last order-first" style="background-color: transparent;">
-            <div class='justify-content-end'>
-              <iframe height="500" src="https://www.youtube.com/embed/u_2fS8rGk5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+          <div class="col-md-7 intro-img order-md-last order-first" style="background-color: transparent;">
+            <!-- <img
+              src="{{ url_for('static', filename='img/er.png') }}"
+              alt=""
+              class="img-fluid"
+            /> -->
+            <iframe width="750" height="500" src="https://www.youtube.com/embed/u_2fS8rGk5g" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
           </div>
         </div>
       </div>
