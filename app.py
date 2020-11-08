@@ -23,13 +23,13 @@ def index() -> str:
 def livemap():
     return render_template('livemap.html')
 
-@app.route('/plots')
-def plots():
-    return render_template('plots.html')
+@app.route('/plot')
+def plot():
+    return render_template('plot.html')
 
-@app.route('/predicts')
-def predicts():
-    return render_template('predicts.html')
+@app.route('/predict')
+def predict():
+    return render_template('predict.html')
 
 @app.route('/satellite')
 def satellite():
