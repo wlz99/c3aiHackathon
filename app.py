@@ -15,22 +15,25 @@ app = flask.Flask(__name__)
 model = pickle.load(open("model.pickle", 'rb'))
 
 @app.route("/")
-# @app.route('/index.html')
 def index() -> str:
     """Base page."""
     return flask.render_template("index.html")
-
-@app.route('/plots')
-def plots():
-    return render_template('plots.html')
 
 @app.route('/livemap')
 def livemap():
     return render_template('livemap.html')
 
+@app.route('/plots')
+def plots():
+    return render_template('plots.html')
+
 @app.route('/predicts')
 def predicts():
     return render_template('predicts.html')
+
+@app.route('/satellite')
+def satellite():
+    return render_template('satellite.html')
 
 @app.route('/test')
 def test():
