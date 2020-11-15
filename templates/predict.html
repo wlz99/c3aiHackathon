@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>FloodML</title>
+    <title>CovidML</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -219,15 +219,15 @@
                     style="color: #ff689b;"
                   ></i>
                 </div>
-                <h4>Flood Prediction</h4>
+                <h4>Covid Prediction</h4>
                 {% if pred == "Safe" %}
                 <h4 style="font-weight: 900;font-size: 40px;color:#41cf2e;">Safe</h4>
-                  <h6 style="font-weight: 400;font-size: 20px;">According to our ML model, we did not detect any signs of a potential flood.</h6>
+                  <h6 style="font-weight: 400;font-size: 20px;">According to our ML model, we did not detect any signs of a potential Covid.</h6>
                 {% endif %}
 
                 {% if pred == "Unsafe" %}
                 <h4 style="font-weight: 900;font-size: 40px;color:#FF002e;">Unsafe</h4>
-                  <h6 style="font-weight: 400;font-size: 20px;">According to our ML model, this area has potential risk of flooding within the next 15 days. Please take emergency measures.</h6>
+                  <h6 style="font-weight: 400;font-size: 20px;">According to our ML model, this area has potential risk of Coviding within the next 15 days. Please take emergency measures.</h6>
                 {% endif %}
                 
               </div>
@@ -366,7 +366,7 @@
               <div class="row">
                 <div class="col-sm-11">
                   <div class="footer-info">
-                    <!-- <h3>FloodML</h3> -->
+                    <!-- <h3>CovidML</h3> -->
                     <img style="margin-top: 0px; max-height: 100px;"
                         src="{{ url_for('static', filename='img/logo-removebg.png') }}" alt="" class="img-fluid" />
                     <p style="padding-top:20px;">
