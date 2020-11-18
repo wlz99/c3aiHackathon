@@ -31,9 +31,9 @@ def plot():
 def predict():
     return render_template('predict.html')
 
-@app.route('/satellite')
-def satellite():
-    return render_template('satellite.html')
+@app.route('/analysis')
+def analysis():
+    return render_template('analysis.html')
 
 @app.route('/test')
 def test():

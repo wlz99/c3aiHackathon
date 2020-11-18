@@ -106,7 +106,7 @@
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           <a class="nav-link" href="/plot">Plot</a>
           <a class="nav-link" href="/livemap">Livemap</a>
-          <a class="nav-link" href="/satellite">Satellite</a>
+          <a class="nav-link" href="/analysis">Analysis</a>
           <a class="nav-link active" href="/predict">Predict</a>
         </div>
       </div>
@@ -126,24 +126,9 @@
             <h3>Weekly Forecast</h3>
 
             <p>
-              Select a country name to get the model prection on next week's trend!
+              Select a country to get the model prection on next week's trend
             </p>
-            <div class="row">
-              <div class="col-lg-12" align="center">
-                <form class="form-inline" method="POST" action="predict" style="display: inline-block;">
-                  <div class="form-group">
-                    <div class="input-group">
-                      <!-- <select name="place" class="selectpicker form-control" style="width:150px;">
-                        {% for item in cities %}
-                        <option value="{{ item.name }}" {{ item.sel }}>{{ item.name }}</option>
-                        {% endfor %}
-                      </select> -->
-                      <input type="text" name="city" placeholder="Enter a country"></input>
-                    </div>
-                    <button type="submit" class="btn btn-default" style="margin-left:15px;height:50px;background-color:#1bb1dc;color:white;">Go</button>
-                  </div>
-                </form>
-              </div>  
+
           </header>
 
   
