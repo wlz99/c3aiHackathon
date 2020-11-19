@@ -1,5 +1,6 @@
 ## CovidML – an operational tool to moderate the pace of the COVID-19 epidemic
 submitted for c3.ai grand challenge
+![workflow](workflow.png)
 
 ## Inspiration
 The human cost of coronavirus has continued to mount, with more than 40.3m cases confirmed globally and more than 1.11m people known to have died. Building an intuitive dashboard visualization tracking the most updated status of Covid is beneficial to the public at large.
