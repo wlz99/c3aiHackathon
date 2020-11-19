@@ -1,88 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>CovidML</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
 
-    <!-- Favicons -->
-    <link
-      href="{{ url_for('static', filename='img/favicon-2.png') }}"
-      rel="icon"
-    />
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+<head>
+  <meta charset="utf-8" />
+  <title>CovidML</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
-      rel="stylesheet"
-    />
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon-2.png') }}" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Bootstrap CSS File -->
-    <link
-      href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+    rel="stylesheet" />
 
-    <!-- Libraries CSS Files -->
-    <link
-      href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}"
-      rel="stylesheet"
-    />
-    <!-- Main Stylesheet File -->
-    <link
-      href="{{ url_for('static', filename='css/style.css') }}"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  </head>
+  <!-- Bootstrap CSS File -->
+  <link href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 
-  <body>
-    <!--==========================
+  <!-- Libraries CSS Files -->
+  <link href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet" />
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  <!--==========================
   Header
   ============================-->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="/">
-        <img style="margin-top: -5px;" width="50" height="50"
-          src="{{ url_for('static', filename='img/logo-removebg.png') }}" class="img-fluid" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-link active" href="/plot">Plot</a>
-          <a class="nav-link" href="/livemap">Livemap</a>
-          <a class="nav-link" href="/analysis">Analysis</a>
-          <a class="nav-link" href="/predict">Predict</a>
-        </div>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="/">
+      <img style="margin-top: -5px;" width="50" height="50"
+        src="{{ url_for('static', filename='img/logo-removebg.png') }}" class="img-fluid" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link active" href="/plot">Global <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/livemap">US</a>
+        <a class="nav-link" href="/analysis">Mobility</a>
+        <a class="nav-link" href="/predict">Predict</a>
       </div>
-    </nav>
-    <!-- #header -->
+    </div>
+  </nav>
+  <!-- #header -->
 
-    <main id="main">
-      <!-- <br /><br /><br /><br /><br /> -->
-      <!--==========================
+  <main id="main">
+    <!-- <br /><br /><br /><br /><br /> -->
+    <!--==========================
       Services Section
     ============================-->
     <!-- <iframe title="New confirmed COVID–19 cases, per day" aria-label="Interactive area chart" id="datawrapper-chart-t87gC" src="https://datawrapper.dwcdn.net/t87gC/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="424"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}(); -->
@@ -129,37 +105,39 @@
             aria-label="Interactive area chart" id="datawrapper-chart-t87gC" 
             src="https://datawrapper.dwcdn.net/t87gC/1/" scrolling="no" frameborder="0" 
             style="width: 0; min-width: 100% !important; border: none;" height="424">
-            </iframe>
-            <script type="text/javascript">!function(){
-              "use strict";window.addEventListener("message",(function(a){
-                if(void 0!==a.data["datawrapper-height"])
-                for(var e in a.data["datawrapper-height"]){
-                  var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");
-                  t&&(t.style.height=a.data["datawrapper-height"][e]+"px")
-                }
+          </iframe>
+          <script type="text/javascript">!function () {
+              "use strict"; window.addEventListener("message", (function (a) {
+                if (void 0 !== a.data["datawrapper-height"])
+                  for (var e in a.data["datawrapper-height"]) {
+                    var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");
+                    t && (t.style.height = a.data["datawrapper-height"][e] + "px")
+                  }
               }))
             }();
-            </script>
+          </script>
 
 
-            <iframe 
-            title="New confirmed COVID–19 deaths, per day" aria-label="Interactive area chart" id="datawrapper-chart-Ba7yn" src="https://datawrapper.dwcdn.net/Ba7yn/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="356"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
-            </script>
+          <iframe title="New confirmed COVID–19 deaths, per day" aria-label="Interactive area chart"
+            id="datawrapper-chart-Ba7yn" src="https://datawrapper.dwcdn.net/Ba7yn/1/" scrolling="no" frameborder="0"
+            style="width: 0; min-width: 100% !important; border: none;" height="356"></iframe>
+          <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) for (var e in a.data["datawrapper-height"]) { var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']"); t && (t.style.height = a.data["datawrapper-height"][e] + "px") } })) }();
+          </script>
 
-            </div>
-
-           
-          </div>
         </div>
-      </section>
 
 
-      <!-- #services -->
+      </div>
+      </div>
+    </section>
 
-      <!--==========================
+
+    <!-- #services -->
+
+    <!--==========================
           About Us Section
         ============================-->
-      <!-- <section id="about">
+    <!-- <section id="about">
         <div class="container">
           <header class="section-header">
             <h3>More Plots!</h3>
@@ -171,91 +149,92 @@
           <div class="row"></div>
         </div>
       </section> -->
-      <!-- #about -->
-    </main>
+    <!-- #about -->
+  </main>
 
-    <!--==========================
+  <!--==========================
     Footer
   ============================-->
-<footer id="footer" class="section-bg" style="background-color: #f5f8fd;">
-  <div class="footer-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6">
-          <div class="row">
-            <div class="col-sm-11">
-              <div class="footer-info">
-                <!-- <h3>CovidML</h3> -->
-                <img style="margin-top: 0px; max-height: 100px;"
+  <footer id="footer" class="section-bg" style="background-color: #f5f8fd;">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-sm-11">
+                <div class="footer-info">
+                  <!-- <h3>CovidML</h3> -->
+                  <img style="margin-top: 0px; max-height: 100px;"
                     src="{{ url_for('static', filename='img/logo-removebg.png') }}" alt="" class="img-fluid" />
-                <p style="padding-top:20px;">
-                  CovidML is a web app that tracks the latest situation as countries fight coronavirus resurgence.
-                </p>
+                  <p style="padding-top:20px;">
+                    CovidML is a web app that tracks the latest situation as countries fight coronavirus resurgence.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-6">
-          <div class="form">
-            <h4>Send us a message</h4>
+          <div class="col-lg-6">
+            <div class="form">
+              <h4>Send us a message</h4>
 
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                  data-rule="minlen:1" data-msg="Please enter a name" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                  data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea type="text" class="form-control" name="message" id="message" placeholder="Your Message"
-                  data-rule="minlen:" data-msg="Please enter at least 8 chars"></textarea>
-                <div class="validation"></div>
-              </div>
+              <form action="" method="post" role="form" class="contactForm">
+                <div class="form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                    data-rule="minlen:1" data-msg="Please enter a name" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                    data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                  <textarea type="text" class="form-control" name="message" id="message" placeholder="Your Message"
+                    data-rule="minlen:" data-msg="Please enter at least 8 chars"></textarea>
+                  <div class="validation"></div>
+                </div>
 
-              <div id="sendmessage">
-                Your message has been sent. Thank you!
-              </div>
-              <div id="errormessage"></div>
+                <div id="sendmessage">
+                  Your message has been sent. Thank you!
+                </div>
+                <div id="errormessage"></div>
 
-              <div class="text-center">
-                <button type="submit" title="Send Message">
-                  Send Message
-                </button>
-              </div>
-            </form>
+                <div class="text-center">
+                  <button type="submit" title="Send Message">
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</footer>
-    <!-- #footer -->
+  </footer>
+  <!-- #footer -->
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-    <!-- Uncomment below i you want to use a preloader -->
-    <!-- <div id="preloader"></div> -->
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <!-- Uncomment below i you want to use a preloader -->
+  <!-- <div id="preloader"></div> -->
 
-    <!-- JavaScript Libraries -->
-    <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="{{ url_for('static', filename='contactform/contactform.js') }}"></script>
+  <!-- JavaScript Libraries -->
+  <script src="{{ url_for('static', filename='lib/jquery/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/jquery/jquery-migrate.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/easing/easing.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/mobile-nav/mobile-nav.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/wow/wow.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/waypoints/waypoints.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/counterup/counterup.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/owlcarousel/owl.carousel.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/isotope/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='lib/lightbox/js/lightbox.min.js') }}"></script>
+  <!-- Contact Form JavaScript File -->
+  <script src="{{ url_for('static', filename='contactform/contactform.js') }}"></script>
 
-    <!-- Template Main Javascript File -->
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-  </body>
+  <!-- Template Main Javascript File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
 </html>
