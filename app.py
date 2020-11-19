@@ -15,21 +15,21 @@ def index() -> str:
     """Base page."""
     return flask.render_template("index.html")
 
-@app.route('/livemap')
-def livemap():
-    return render_template('livemap.html')
+@app.route('/us')
+def us():
+    return render_template('us.html')
 
-@app.route('/plot')
-def plot():
-    return render_template('plot.html')
+@app.route('/global')
+def global_page():
+    return render_template('global.html')
 
 @app.route('/predict')
 def predict():
     return render_template('predict.html')
 
-@app.route('/analysis')
-def analysis():
-    return render_template('analysis.html')
+@app.route('/mobility')
+def mobility():
+    return render_template('mobility.html')
 
 @app.route('/test')
 def test():
