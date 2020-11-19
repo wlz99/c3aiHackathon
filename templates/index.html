@@ -406,7 +406,9 @@
               ></a>
               <div id="faq1" class="collapse" data-parent="#faq-list">
                 <p>
-                  According to the World Resources Institute, over 80% of India's population, that is, 1.08 billion people, are at risk due to floods. Floods cause an economic loss of nearly 15 Billion USD per year in India. In the recent Kerala flood tragedy, over 100 people lost their lives, and over 15,000 houses and buildings were swept away in the torrential rains. These kinds of floods happen almost every single year in the flood prone areas, and cause major damage to life and property. The major cause of this is overflowing of rivers, reservoirs and other water bodies due to extensive rainfall during the monsoon season. We wanted to make a system for effective prediction of floods in India. This kind of system does not exist yet due to lack of quality data for prediction.
+                  The human cost of coronavirus has continued to mount, with more than 40.3m cases confirmed globally and more than 1.11m
+                  people known to have died. Building an intuitive dashboard visualization tracking the most updated status of Covid is
+                  beneficial to the public at large.
                 </p>
               </div>
             </li>
@@ -417,38 +419,41 @@
               ></a>
               <div id="faq2" class="collapse" data-parent="#faq-list">
                 <p>
-                  <b>THE DATASET</b><br>
-                  <br>
-Our thesis was that we could predict floods from weather data using machine learning. For the dataset, we first scraped this website http://floodlist.com/tag/india using the python beautiful-soup 4 library. This website gave us data about past floods India.- when and where they occurred. We then used the visual crossing weather API to obtain historic weather data such as precipitation, humidity, temperature data, cloud cover etc. in those areas, and during those times. We also performed data augmentation on this, and then stored it in a .csv file.<br>
-<br>
-<b>ML MODEL</b><br>
-<br>
-Our ML model is based on python sci-kit learn library. We used pandas to generate a data-frame from the .csv file, and then tried various ML models such as Logistic regression, KNN, and Random Forester. Out of these, the Random Forester classifier gave the highest accuracy of 98.71% on the test set. We then saved our model using a .pickle file.<br>
-<br>
-<b>DATA VISUALIZATION</b><br>
-<br>
-We first obtained COVID-19 datasets from C3.ai datalake, combined with governmental and institutional data sources like CDC, Google, Google, and Johns Hopkins. Visualization is then built using Datawrapper. <br>
-<br>
-<b>FRONT-END AND HOSTING</b><br>
-<br>
-Our web app is based on the flask python framework. We rendered HTML templates on top of this flask back-end, and styled it using Bootstrap. Our web app is hosted via Heroku.<br>
-<br>                
-</p>
+                  Our web app is based on the Flask python framework. We obtained multiple datasets from c3.ai datalake. The
+                  visualizations on the plots page display the status quo of infection cases and fatalities across the world using
+                  Datawrapper tool. We produced geo-referenced plots using a combination of libraries. We used pandas to generate a
+                  data-frame for the dataset, and then tried different models to forecast the infection trends.    
+                </p>
               </div>
             </li>
 
             <li>
               <a data-toggle="collapse" href="#faq3" class="collapsed"
-                >Accomplishments we are proud of<i
+                >Challenges We ran into<i
                   class="ion-android-remove"
                 ></i
               ></a>
               <div id="faq3" class="collapse" data-parent="#faq-list">
                 <p>
-                - Creating the best dataset in existence for flood prediction in India.<br>
-                - Making a highly effective ML model with over 98% accuracy.<br>
-                - Making a clean-looking UI for the web app.<br>
-                - Creating sophisticated plots for data visualization.<br>
+                  Mining and analyzing the data to build the data visualizations was a hard step. Even with perfect reporting, there are
+                  fundamental delays in what such data can tell us. For example, new infections today reflect virus activity as of 9 to 13
+                  days ago (which depends, in turn, on social distancing interventions from up to 17 days prior), as derived from the lag
+                  correlation analysis. Not factoring in such considerations have led to significant over-estimation of hospitalization
+                  needs nationwide.
+                </p>
+              </div>
+            </li>
+
+            <li>
+              <a data-toggle="collapse" href="#faq4" class="collapsed"
+                >What's next for CovidML<i
+                  class="ion-android-remove"
+                ></i
+              ></a>
+              <div id="faq4" class="collapse" data-parent="#faq-list">
+                <p>
+                  We hope to expand our web application to cover countries all around the world, add a page that visualized the multiplex
+                  impacts of Covid, and try more modeling techniques to forecast the future trend of the pandemic.
                 </p>
               </div>
             </li>
