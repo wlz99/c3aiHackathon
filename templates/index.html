@@ -1,359 +1,312 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>CovidML</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
 
-    <!-- Favicons -->
-    <link
-      href="{{ url_for('static', filename='img/favicon-2.png') }}"
-      rel="icon"
-    />
-    <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
+<head>
+  <meta charset="utf-8" />
+  <title>CovidML</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
-      rel="stylesheet"
-    />
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='img/favicon-2.png') }}" rel="icon" />
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Bootstrap CSS File -->
-    <link
-      href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700"
+    rel="stylesheet" />
 
-    <!-- Libraries CSS Files -->
-    <link
-      href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/animate/animate.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}"
-      rel="stylesheet"
-    />
-    <link
-      href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}"
-      rel="stylesheet"
-    />
-    <!-- Main Stylesheet File -->
-    <link
-      href="{{ url_for('static', filename='css/style.css') }}"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- Bootstrap CSS File -->
+  <link href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" />
 
-  <body>
-    <!--==========================
+  <!-- Libraries CSS Files -->
+  <link href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/animate/animate.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
+  <link href="{{ url_for('static', filename='lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet" />
+  <!-- Main Stylesheet File -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  <!--==========================
   Header
   ============================-->
-    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-      <a
-        class="navbar-brand" href="/">
-          <img style="margin-top: -5px;" width="50" height="50"
-            src="{{ url_for('static', filename='img/logo-removebg.png') }}" class="img-fluid" />
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-link" href="/plot">Plot</a>
-          <a class="nav-link" href="/livemap">Livemap</a>
-          <a class="nav-link" href="/analysis">Analysis</a>
-          <a class="nav-link" href="/predict">Predict</a>
-        </div>
+  <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="/">
+      <img style="margin-top: -5px;" width="50" height="50"
+        src="{{ url_for('static', filename='img/logo-removebg.png') }}" class="img-fluid" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/plot">Plot</a>
+        <a class="nav-link" href="/livemap">Livemap</a>
+        <a class="nav-link" href="/analysis">Analysis</a>
+        <a class="nav-link" href="/predict">Predict</a>
       </div>
-    </nav>
-  
-    <!-- #header -->
-    <!--==========================
+    </div>
+  </nav>
+
+  <!-- #header -->
+  <!--==========================
     Intro Section
   ============================-->
-    <section id="intro" class="clearfix">
-      <div class="container d-flex h-100">
-        <div class="row justify-content-center align-self-center">
-          <div class="col-md-6 intro-info order-md-first order-last" style="background-color: transparent;padding-right:50px;">
-            <img
-              style="margin-top: 0px; max-height: 150px;"
-              src="{{ url_for('static', filename='img/logo-removebg.png') }}"
-              alt=""
-              class="img-fluid"
-            />
-            <h3 style="padding-top:30px;padding-left:10px;line-height: 40px;">Visualize the trend of COVID-19 with machine learning 
-              empowered spread prediction</h3>
-            <br />
-            <div style="padding-left:10px;">
-              <a href="#about" class="btn btn-info scrollto">Get Started</a>
-            </div>
+  <section id="intro" class="clearfix">
+    <div class="container d-flex h-100">
+      <div class="row justify-content-center align-self-center">
+        <div class="col-md-6 intro-info order-md-first order-last"
+          style="background-color: transparent;padding-right:50px;">
+          <img style="margin-top: 0px; max-height: 150px;"
+            src="{{ url_for('static', filename='img/logo-removebg.png') }}" alt="" class="img-fluid" />
+          <h3 style="padding-top:30px;padding-left:10px;line-height: 40px;">Visualize the trend of COVID-19 with machine
+            learning
+            empowered spread prediction</h3>
+          <br />
+          <div style="padding-left:10px;">
+            <a href="#about" class="btn btn-info scrollto">Get Started</a>
+          </div>
+        </div>
+
+        <div class="col-md-6 order-md-last order-first embed-responsive embed-responsive-16by9"
+          style="background-color: transparent">
+          <iframe class='embed-responsive-item' src="https://www.youtube.com/embed/u_2fS8rGk5g" frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- #intro -->
+  <main id="main">
+    <!--==========================
+      About Us Section
+    ============================-->
+
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 col-md-7">
+            <!-- <div class="about-img"> -->
+            <!-- <img
+                  src="{{ url_for('static', filename='img/images.jpg') }}"
+                  alt=""
+                /> -->
+
+            <iframe title="Coronavirus COVID-19 confirmed, deaths, recovered (Copy)" aria-label="chart"
+              id="datawrapper-chart-GK6Zb" src="https://datawrapper.dwcdn.net/GK6Zb/1/" scrolling="no" frameborder="0"
+              style="width: 0; min-width: 100% !important; border: none;" height="268">
+            </iframe>
+            <script type="text/javascript">!function () {
+                "use strict"; window.addEventListener("message", (function (a) {
+                  if (void 0 !== a.data["datawrapper-height"])
+                    for (var e in a.data["datawrapper-height"]) {
+                      var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']");
+                      t && (t.style.height = a.data["datawrapper-height"][e] + "px")
+                    }
+                }))
+              }();
+            </script>
+
+            </iframe>
+            <!-- </div> -->
           </div>
 
-          <div class="col-md-6 order-md-last order-first embed-responsive embed-responsive-16by9" 
-            style="background-color: transparent">
-              <iframe 
-                class='embed-responsive-item'
-                src="https://www.youtube.com/embed/u_2fS8rGk5g" 
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="col-lg-5 col-md-6">
+            <div class="about-content">
+              <h2>What is CovidML?</h2>
+              <h3>
+                A web app that tracks the latest situation as countries fight coronavirus resurgence.
+              </h3>
+
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- #intro -->
-    <main id="main">
-      <!--==========================
-      About Us Section
-    ============================-->
+    <!-- #about -->
 
-      <section id="about">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7 col-md-7">
-              <!-- <div class="about-img"> -->
-                <!-- <img
-                  src="{{ url_for('static', filename='img/images.jpg') }}"
-                  alt=""
-                /> -->
-               
-                  <iframe 
-                  title="Coronavirus COVID-19 confirmed, deaths, recovered (Copy)" aria-label="chart" 
-                  id="datawrapper-chart-GK6Zb" src="https://datawrapper.dwcdn.net/GK6Zb/1/" scrolling="no" 
-                  frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="268">
-                  </iframe>
-                  <script type="text/javascript">!function(){
-                    "use strict";window.addEventListener("message",(function(a){
-                      if(void 0!==a.data["datawrapper-height"])
-                      for(var e in a.data["datawrapper-height"]){
-                        var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");
-                        t&&(t.style.height=a.data["datawrapper-height"][e]+"px")
-                        }
-                        }))}();
-                  </script>
-              
-              </iframe>
-              <!-- </div> -->
-            </div>
-
-            <div class="col-lg-5 col-md-6">
-              <div class="about-content">
-                <h2>What is CovidML?</h2>
-                <h3>
-                  A web app that tracks the latest situation as countries fight coronavirus resurgence.
-                </h3>
-    
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- #about -->
-
-      <!--==========================
+    <!--==========================
       Services Section
     ============================-->
-      <section id="services" class="section-bg">
-        <div class="container">
-          <header class="section-header">
-            <h3>Services</h3>
-            <p>
-              We aim to find the basic facts, current patterns, and future trends behind the common notions about how COVID-19 spread.
-            </p>
-          </header>
+    <section id="services" class="section-bg">
+      <div class="container">
+        <header class="section-header">
+          <h3>Services</h3>
+          <p>
+            We aim to find the basic facts, current patterns, and future trends behind the common notions about how
+            COVID-19 spread.
+          </p>
+        </header>
 
-          <div class="row">
-            <div
-              class="col-md-6 col-lg-3 wow bounceInUp"
-              data-wow-duration="1.4s"
-            >
-              <div class="box" style="height: 320px;">
-                <div class="icon" style="background: #fceef3;">
-                  <i
-                    class="ion-ios-analytics-outline"
-                    style="color: #ff689b;"
-                  ></i>
-                </div>
-                <h4 class="title"><a href="plot">Plots</a></h4>
-                <p class="description">
-                  Plots showing predictions of infection and death rates around the world
-                </p>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box" style="height: 320px;">
+              <div class="icon" style="background: #fceef3;">
+                <i class="ion-ios-analytics-outline" style="color: #ff689b;"></i>
               </div>
+              <h4 class="title"><a href="plot">Plots</a></h4>
+              <p class="description">
+                Plots showing predictions of infection and death rates around the world
+              </p>
             </div>
-            <div
-              class="col-md-6 col-lg-3 wow bounceInUp"
-              data-wow-duration="1.4s"
-            >
-              <div class="box" style="height: 320px;">
-                <div class="icon" style="background: #fff0da;">
-                  <i
-                    class="ion-ios-bookmarks-outline"
-                    style="color: #e98e06;"
-                  ></i>
-                </div>
-                <h4 class="title"><a href="livemap">Heatmap</a></h4>
-                <p class="description">
-                  Interactive heatmaps sharing realtime data on US counties. 
-                </p>
+          </div>
+          <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-duration="1.4s">
+            <div class="box" style="height: 320px;">
+              <div class="icon" style="background: #fff0da;">
+                <i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i>
               </div>
+              <h4 class="title"><a href="livemap">Heatmap</a></h4>
+              <p class="description">
+                Interactive heatmaps sharing realtime data on US counties.
+              </p>
             </div>
+          </div>
 
-            <div
-              class="col-md-6 col-lg-3 wow bounceInUp"
-              data-wow-delay="0.1s"
-              data-wow-duration="1.4s"
-            >
-              <div class="box" style="height: 320px;">
-                <div class="icon" style="background: #eafde7;">
-                  <i
-                    class="ion-ios-speedometer-outline"
-                    style="color: #41cf2e;"
-                  ></i>
-                </div>
-                <h4 class="title"><a href="analysis">Analysis</a></h4>
-                <p class="description">
-                  Analysis of policy impacts and relationships between mobility & new infections
-                </p>
+          <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box" style="height: 320px;">
+              <div class="icon" style="background: #eafde7;">
+                <i class="ion-ios-speedometer-outline" style="color: #41cf2e;"></i>
               </div>
+              <h4 class="title"><a href="analysis">Analysis</a></h4>
+              <p class="description">
+                Analysis of policy impacts and relationships between mobility & new infections
+              </p>
             </div>
+          </div>
 
-            <div
-              class="col-md-6 col-lg-3 wow bounceInUp"
-              data-wow-delay="0.1s"
-              data-wow-duration="1.4s"
-            >
-              <div class="box" style="height: 320px;">
-                <div class="icon" style="background: #e6fdfc;">
-                  <i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i>
-                </div>
-                <h4 class="title"><a href="predicts">Predict</a></h4>
-                <p class="description">
-                  Prediction of COVID-19 cases by country and by tweaking different factors
-                </p>
+          <div class="col-md-6 col-lg-3 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+            <div class="box" style="height: 320px;">
+              <div class="icon" style="background: #e6fdfc;">
+                <i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i>
               </div>
+              <h4 class="title"><a href="predicts">Predict</a></h4>
+              <p class="description">
+                Prediction of COVID-19 cases by country and by tweaking different factors
+              </p>
             </div>
           </div>
         </div>
-      </section>
-      <!-- #services -->
+      </div>
+    </section>
+    <!-- #services -->
 
-      <iframe title="Active COVID-19 cases per 100,000 of population" aria-label="map" id="datawrapper-chart-ZJr8f" src="https://datawrapper.dwcdn.net/ZJr8f/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="574"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(a){if(void 0!==a.data["datawrapper-height"])for(var e in a.data["datawrapper-height"]){var t=document.getElementById("datawrapper-chart-"+e)||document.querySelector("iframe[src*='"+e+"']");t&&(t.style.height=a.data["datawrapper-height"][e]+"px")}}))}();
-      </script>
-   
+    <iframe title="Active COVID-19 cases per 100,000 of population" aria-label="map" id="datawrapper-chart-ZJr8f"
+      src="https://datawrapper.dwcdn.net/ZJr8f/1/" scrolling="no" frameborder="0"
+      style="width: 0; min-width: 100% !important; border: none;" height="574"></iframe>
+    <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) for (var e in a.data["datawrapper-height"]) { var t = document.getElementById("datawrapper-chart-" + e) || document.querySelector("iframe[src*='" + e + "']"); t && (t.style.height = a.data["datawrapper-height"][e] + "px") } })) }();
+    </script>
 
-      <!--==========================
+
+    <!--==========================
                 Why Us Section
               ============================-->
-      <section id="why-us" class="wow fadeIn">
-        <div class="container">
-          <div class="row counters">
-            <div class="col-lg-3 col-6 text-center">
-              <span data-toggle="counter-up">56</span>
-              <p>Million COVID-19 cases worldwide</p>
-            </div>
-            
-            <div class="col-lg-3 col-6 text-center">
-              <span data-toggle="counter-up">10.5</span>
-              <p>Estimated COVID-19 infection rate (%)</p>
-            </div>
-
-            <div class="col-lg-3 col-6 text-center">
-              <span data-toggle="counter-up">30</span>
-              <p>seconds of hand washing with soap and water are effective of prevention</p>
-            </div>
-            
-            <div class="col-lg-3 col-6 text-center">
-              <span data-toggle="counter-up">14</span>
-              <p>days (up to) to appear any symtoms after exposure to the virus</p>
-            </div>
-
+    <section id="why-us" class="wow fadeIn">
+      <div class="container">
+        <div class="row counters">
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">56</span>
+            <p>Million COVID-19 cases worldwide</p>
           </div>
-        </div>
-      </section>
 
-      <!--==========================
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">10.5</span>
+            <p>Estimated COVID-19 infection rate (%)</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">30</span>
+            <p>seconds of hand washing with soap and water are effective of prevention</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up">14</span>
+            <p>days (up to) to appear any symtoms after exposure to the virus</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
       Frequently Asked Questions Section
     ============================-->
-      <section id="faq">
-        <div class="container">
-          <header class="section-header">
-            <h3>Frequently Asked Questions</h3>
-            <p></p>
-          </header>
+    <section id="faq">
+      <div class="container">
+        <header class="section-header">
+          <h3>Frequently Asked Questions</h3>
+          <p></p>
+        </header>
 
-          <ul id="faq-list" class="wow fadeInUp">
-            <li>
-              <a data-toggle="collapse" class="collapsed" href="#faq1"
-                >Inspiration <i class="ion-android-remove"></i
-              ></a>
-              <div id="faq1" class="collapse" data-parent="#faq-list">
-                <p>
-                  The human cost of coronavirus has continued to mount, with more than 40.3m cases confirmed globally and more than 1.11m
-                  people known to have died. Building an intuitive dashboard visualization tracking the most updated status of Covid is
-                  beneficial to the public at large.
-                </p>
-              </div>
-            </li>
+        <ul id="faq-list" class="wow fadeInUp">
+          <li>
+            <a data-toggle="collapse" class="collapsed" href="#faq1">Inspiration <i class="ion-android-remove"></i></a>
+            <div id="faq1" class="collapse" data-parent="#faq-list">
+              <p>
+                The human cost of coronavirus has continued to mount, with more than 40.3m cases confirmed globally and
+                more than 1.11m
+                people known to have died. Building an intuitive dashboard visualization tracking the most updated
+                status of Covid is
+                beneficial to the public at large.
+              </p>
+            </div>
+          </li>
 
-            <li>
-              <a data-toggle="collapse" href="#faq2" class="collapsed"
-                >How we built it <i class="ion-android-remove"></i
-              ></a>
-              <div id="faq2" class="collapse" data-parent="#faq-list">
-                <p>
-                  Our web app is based on the Flask python framework. We obtained multiple datasets from c3.ai datalake. The
-                  visualizations on the plots page display the status quo of infection cases and fatalities across the world using
-                  Datawrapper tool. We produced geo-referenced plots using a combination of libraries. We used pandas to generate a
-                  data-frame for the dataset, and then tried different models to forecast the infection trends.    
-                </p>
-              </div>
-            </li>
+          <li>
+            <a data-toggle="collapse" href="#faq2" class="collapsed">How we built it <i
+                class="ion-android-remove"></i></a>
+            <div id="faq2" class="collapse" data-parent="#faq-list">
+              <p>
+                Our web app is based on the Flask python framework. We obtained multiple datasets from c3.ai datalake.
+                The
+                visualizations on the plots page display the status quo of infection cases and fatalities across the
+                world using
+                Datawrapper tool. We produced geo-referenced plots using a combination of libraries. We used pandas to
+                generate a
+                data-frame for the dataset, and then tried different models to forecast the infection trends.
+              </p>
+            </div>
+          </li>
 
-            <li>
-              <a data-toggle="collapse" href="#faq3" class="collapsed"
-                >Challenges We ran into<i
-                  class="ion-android-remove"
-                ></i
-              ></a>
-              <div id="faq3" class="collapse" data-parent="#faq-list">
-                <p>
-                  Mining and analyzing the data to build the data visualizations was a hard step. Even with perfect reporting, there are
-                  fundamental delays in what such data can tell us. For example, new infections today reflect virus activity as of 9 to 13
-                  days ago (which depends, in turn, on social distancing interventions from up to 17 days prior), as derived from the lag
-                  correlation analysis. Not factoring in such considerations have led to significant over-estimation of hospitalization
-                  needs nationwide.
-                </p>
-              </div>
-            </li>
+          <li>
+            <a data-toggle="collapse" href="#faq3" class="collapsed">Challenges We ran into<i
+                class="ion-android-remove"></i></a>
+            <div id="faq3" class="collapse" data-parent="#faq-list">
+              <p>
+                Mining and analyzing the data to build the data visualizations was a hard step. Even with perfect
+                reporting, there are
+                fundamental delays in what such data can tell us. For example, new infections today reflect virus
+                activity as of 9 to 13
+                days ago (which depends, in turn, on social distancing interventions from up to 17 days prior), as
+                derived from the lag
+                correlation analysis. Not factoring in such considerations have led to significant over-estimation of
+                hospitalization
+                needs nationwide.
+              </p>
+            </div>
+          </li>
 
-            <li>
-              <a data-toggle="collapse" href="#faq4" class="collapsed"
-                >What's next for CovidML<i
-                  class="ion-android-remove"
-                ></i
-              ></a>
-              <div id="faq4" class="collapse" data-parent="#faq-list">
-                <p>
-                  We hope to expand our web application to cover countries all around the world, add a page that visualized the multiplex
-                  impacts of Covid, and try more modeling techniques to forecast the future trend of the pandemic.
-                </p>
-              </div>
-            </li>
+          <li>
+            <a data-toggle="collapse" href="#faq4" class="collapsed">What's next for CovidML<i
+                class="ion-android-remove"></i></a>
+            <div id="faq4" class="collapse" data-parent="#faq-list">
+              <p>
+                We hope to expand our web application to cover countries all around the world, add a page that
+                visualized the multiplex
+                impacts of Covid, and try more modeling techniques to forecast the future trend of the pandemic.
+              </p>
+            </div>
+          </li>
 
-          </ul>
-        </div>
-      </section> 
-      <!-- #faq
+        </ul>
+      </div>
+    </section>
+    <!-- #faq
     </main>
 
     <!--==========================
@@ -367,12 +320,8 @@
               <div class="row">
                 <div class="col-sm-11">
                   <div class="footer-info">
-                    <img
-                        style="margin-top: 0px; max-height: 100px;"
-                        src="{{ url_for('static', filename='img/logo-removebg.png') }}"
-                        alt=""
-                        class="img-fluid"
-                    />
+                    <img style="margin-top: 0px; max-height: 100px;"
+                      src="{{ url_for('static', filename='img/logo-removebg.png') }}" alt="" class="img-fluid" />
                     <p style="padding-top:20px;">
                       CovidML is a web app that tracks the latest situation as countries fight coronavirus resurgence.
                     </p>
@@ -385,41 +334,21 @@
               <div class="form">
                 <h4>Send us a message</h4>
 
-                <form action="" method="post" role="form" class="contactForm" action="/static/contactform/contact-form-handler.php">
+                <form action="" method="post" role="form" class="contactForm"
+                  action="/static/contactform/contact-form-handler.php">
                   <div class="form-group">
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control"
-                      id="name"
-                      placeholder="Your Name"
-                      data-rule="minlen:1"
-                      data-msg="Please enter a name"
-                    />
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
+                      data-rule="minlen:1" data-msg="Please enter a name" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email"
-                      placeholder="Your Email"
-                      data-rule="email"
-                      data-msg="Please enter a valid email"
-                    />
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                      data-rule="email" data-msg="Please enter a valid email" />
                     <div class="validation"></div>
                   </div>
                   <div class="form-group">
-                    <textarea
-                      type="text"
-                      class="form-control"
-                      name="message"
-                      id="message"
-                      placeholder="Your Message"
-                      data-rule="minlen:4"
-                      data-msg="Please enter at least 4 chars"
-                    ></textarea>
+                    <textarea type="text" class="form-control" name="message" id="message" placeholder="Your Message"
+                      data-rule="minlen:4" data-msg="Please enter at least 4 chars"></textarea>
                     <div class="validation"></div>
                   </div>
 
@@ -463,5 +392,6 @@
 
     <!-- Template Main Javascript File -->
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-  </body>
+</body>
+
 </html>
