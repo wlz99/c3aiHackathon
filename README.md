@@ -1,4 +1,5 @@
 ## CovidML – an operational tool to moderate the pace of the COVID-19 epidemic
+visit https://covid-machine-learning.herokuapp.com/
 submitted for c3.ai grand challenge
 ![workflow](deliverables/workflow.png)
 
